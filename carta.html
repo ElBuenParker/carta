@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Carta</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&display=swap');
+
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #000;
+      font-family: 'Caveat', cursive;
+    }
+
+    .container {
+      text-align: center;
+      width: 100%;
+      padding: 0 15px;
+      box-sizing: border-box;
+    }
+
+    .btn-leer {
+      padding: 10px 20px;
+      font-size: 1.5rem;
+      color: #fff;
+      background: #b788ca;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+
+    .btn-leer:hover {
+      transform: scale(1.1);
+      background: #774e80;
+    }
+
+    .carta {
+      display: none;
+      background: #fff8e1;
+      color: #3e2723;
+      padding: 20px;
+      width: 90%;
+      max-width: 400px;
+      margin: 0 auto;
+      border: 2px solid #8d6e63;
+      border-radius: 10px;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+      transform-origin: top;
+      transform: scaleY(0);
+      transition: transform 0.8s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.8s ease;
+      opacity: 0;
+    }
+
+    .carta.visible {
+      display: block;
+      transform: scaleY(1);
+      opacity: 1;
+    }
+
+    .carta h1 {
+      font-size: 1.8rem;
+      margin-bottom: 10px;
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+    }
+
+    .carta p {
+      font-size: 1rem;
+      line-height: 1.5;
+      text-align: justify;
+    }
+
+    .carta::before, .carta::after {
+      content: '';
+      display: block;
+      height: 20px;
+      width: 100%;
+      background: linear-gradient(to right, transparent, #bdacc4, transparent);
+      position: relative;
+      top: -15px;
+    }
+
+    .carta::after {
+      top: auto;
+      bottom: -15px;
+    }
+
+    @media (min-width: 768px) {
+      .btn-leer {
+        font-size: 2rem;
+      }
+
+      .carta {
+        padding: 30px;
+      }
+
+      .carta h1 {
+        font-size: 2rem;
+      }
+
+      .carta p {
+        font-size: 1.2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <button class="btn-leer" onclick="abrirCarta()">Click</button>
+    <div class="carta" id="carta">
+      <h1>Hola Any,</h1>
+      <p>
+        Sé que una carta mia o mensaje es lo ultimo que esperarías o quisieras Leer
+        en estos momentos, sé que tienes muchas preguntas (o a lo mejor ninguna), y perdón por no
+        porder responderlas, esta carta no creo que tenga respuesta a todas ellas, con las flores puedes hacer
+        lo que tu quieras, puedes regalarlas, puedes quedartelas, puedes hacer lo que creas mejor para ti.
+
+        con tu labial, verdaderamente no es mi tono y me duele tenerlo ahí, originalmente era para ti y no es para nadie mas.
+        a decir verdad no espero nada de esto, nunca te di flores la cantidad de veces que hubieses querido, y mucho menos se me pasó
+        por la mente dartelas de este modo, no busco un perdón, ni un "me equivoqué" tomo mis decisiones como lo que son
+        y me atengo al presente como lo que es ahora, me alegra que tu ya estés avanzando en tu vida,
+        creo que es tiempo de empezar a hacerlo yo tambien, sé que las cosas no terminaron bien, puedes odiarme o no por como tomé la decisión aquel día,
+        fueron tantas noches que me pregunté si fue una buena decisión o no, claramente solo fue eso, una decisión tomada, no me fui odiandote de ahí. 
+        me llevé un recuerdo triste, y sé que tu te llevaste uno peor, no puedo cambiar lo que pasó, y tampoco pienso cambiar tu sentir.
+
+        solo espero que el día de mañana o pasado, o en un mes o un año, sigas siendo la misma niña de la que me enamoré 3 años atras.
+
+        me refiero a tu escencia alegre que encanta a todos.
+
+        sin mas que decir, solo Gracias.
+      </p>
+      <p>.</p>
+      <p>13/03/2025</p>
+    </div>
+  </div>
+
+  <script>
+    function abrirCarta() {
+      const carta = document.getElementById('carta');
+      carta.classList.add('visible');
+    }
+  </script>
+</body>
+</html>
